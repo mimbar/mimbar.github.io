@@ -24,9 +24,8 @@
 
     <script type="text/javascript">
         $.ajax({
+            method: "POST",
             url: "https://sigesit119.tasikmalayakab.go.id/peta",
-            dataType: "jsonp",
-            headers: {"X-Test-Header": "test-value"},
             success: function (response) {
                 console.log(response); // server response
             }
