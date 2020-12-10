@@ -12,7 +12,9 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -21,11 +23,19 @@
         <![endif]-->
 
     <script type="text/javascript">
-    let headers = new Headers();
-    headers.append('Access-Control-Allow-Origin', 'https://mimbar.github.io/');
-    headers.append('Access-Control-Allow-Credentials', 'true');
+        let headers = new Headers();
+        headers.append('Access-Control-Allow-Origin', 'https://mimbar.github.io/');
+        headers.append('Access-Control-Allow-Credentials', 'true');
 
-    $.get("https://sigesit119.tasikmalayakab.go.id/peta/", function(response) {  console.log(response);});
+
+        $.ajax({
+            url: "https://sigesit119.tasikmalayakab.go.id/peta",
+            dataType: "jsonp",
+            success: function (response) {
+                console.log(response); // server response
+            }
+
+        });
 
         // var SUSPEK = { "32.06.01": 39, "32.06.02": 60, "32.06.03": 121, "32.06.04": 12, "32.06.05": 10, "32.06.06": 101, "32.06.07": 36, "32.06.08": 6, "32.06.09": 17, "32.06.10": 11, "32.06.11": 21, "32.06.12": 38, "32.06.13": 57, "32.06.14": 72, "32.06.15": 30, "32.06.16": 56, "32.06.17": 8, "32.06.18": 65, "32.06.19": 46, "32.06.20": 25, "32.06.21": 19, "32.06.22": 69, "32.06.23": 27, "32.06.24": 83, "32.06.25": 36, "32.06.26": 27, "32.06.27": 84, "32.06.28": 62, "32.06.29": 24, "32.06.30": 70, "32.06.31": 31, "32.06.32": 55, "32.06.33": 27, "32.06.34": 48, "32.06.35": 72, "32.06.36": 87, "32.06.37": 13, "32.06.38": 72, "32.06.39": 76 }; 
         // var SUSPEKp = { "32.06.01": 0, "32.06.02": 0, "32.06.03": "68", "32.06.04": 0, "32.06.05": 0, "32.06.06": "4", "32.06.07": "4", "32.06.08": 0, "32.06.09": "4", "32.06.10": 0, "32.06.11": 0, "32.06.12": 0, "32.06.13": 0, "32.06.14": "20", "32.06.15": 0, "32.06.16": 0, "32.06.17": 0, "32.06.18": 0, "32.06.19": "1", "32.06.20": 0, "32.06.21": 0, "32.06.22": "19", "32.06.23": 0, "32.06.24": 0, "32.06.25": 0, "32.06.26": 0, "32.06.27": 0, "32.06.28": 0, "32.06.29": 0, "32.06.30": 0, "32.06.31": 0, "32.06.32": 0, "32.06.33": 0, "32.06.34": "1", "32.06.35": "6", "32.06.36": 0, "32.06.37": 0, "32.06.38": "4", "32.06.39": 0 }; 
