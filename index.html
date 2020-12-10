@@ -24,10 +24,11 @@
 
     <script type="text/javascript">
         $.ajax({
-            method: "POST",
-            url: "https://sigesit119.tasikmalayakab.go.id/peta",
-            success: function (response) {
-                console.log(response); // server response
+            url: 'http://news.bbc.co.uk',
+            type: 'GET',
+            success: function (res) {
+                var headline = $(res.responseText).find('a.tsh').text();
+                alert(headline);
             }
         });
 
